@@ -40,7 +40,7 @@ instance Show SRule where
    show (SRule s) = "[" ++ (foldr (\(w1,w2) acc -> show w1 ++ "->" ++ show w2 ++ ";") "" s) ++ "]\n" 
 --newtype SRules = SRules ([SRule]) deriving Show
 
-data SM =  SM {n :: N, yn :: [[Y]], qn :: [[Q]], srs :: [SRule]} deriving Show
+data SM =  SM (N, [[Y]], [[Q]], [SRule]) deriving Show
 
 --applySRule :: SRule -> Word -> Word
 --applySRule (SRule (a:word1, b:word2)) (w:word) = 
